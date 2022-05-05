@@ -85,8 +85,9 @@ class Rally {
    * @param string $domain
    *   Override for Domain to talk to
    */
-  public function __construct($username, $password, $domain = 'rally1.rallydev.com') {
-    $this->_domain = $domain;
+  public function __construct($username, $password, $domain = null, $email = null) {
+    $this->_domain = $domain ?? 'rally1.rallydev.com';
+    $email = $email ?? $username;
 
     $this->_curl = curl_init();
 
@@ -105,7 +106,7 @@ class Rally {
     $this->_securityToken = $authResults['SecurityToken'];
 
     // Validate Login was Successful
-    $user_data = $this->find('user', "(EmailAddress = \"{$username}\")");
+    $user_data = $this->find('user', "(EmailAddress = \"{$email}\")");
     $this->_user = $user_data[0];
   }
 
