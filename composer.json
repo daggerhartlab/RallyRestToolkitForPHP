@@ -1,5 +1,5 @@
 {
-  "name": "rallytools/rallyrestroolkit",
+  "name": "daggerhartlab/rallyrestroolkit",
   "description": "This is a simple but effective package to communicate back and forth with Rally.",
   "keywords": ["rally"],
   "homepage": "https://github.com/RallyTools/RallyRestToolkitForPHP",
